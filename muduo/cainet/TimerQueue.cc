@@ -35,26 +35,26 @@ namespace detail{
         return fd;
     } 
 
-    struct timespec howMuchTimeFromNow(Timestamp when)
+    struct timespec howMuchTimeFromNow(muduo::Timestamp when)
     {
         int64_t microseconds = when.microSecondsSinceEpoch()
-            - Timestamp::now().microSecondsSinceEpoch();
+            - muduo::Timestamp::now().microSecondsSinceEpoch();
         if (microseconds < 100)
         {
             microseconds = 100;
         }
         struct timespec ts;
         ts.tv_sec = static_cast<time_t>(
-                microseconds / Timestamp::kMicroSecondsPerSecond);
+                microseconds / muduo::Timestamp::kMicroSecondsPerSecond);
         ts.tv_nsec = static_cast<long>(
-                (microseconds % Timestamp::kMicroSecondsPerSecond) * 1000);
+                (microseconds % muduo::Timestamp::kMicroSecondsPerSecond) * 1000);
         return ts;
     }
     /**
      * 重置 timer 的超时时间
      * @return
      */
-    void resetTimerfd(int tfd, Timestamp when) {
+    void resetTimerfd(int tfd, muduo::Timestamp when) {
         struct itimerspec newVal;
         struct itimerspec oldVal;
         memset(&newVal, 0, sizeof newVal);
@@ -86,7 +86,7 @@ namespace cai {
      */
     void TimerQueue::handleRead() {
         LOG_TRACE << "handle read timerfd...";
-        muduo::Timestamp now(Timestamp::now());
+        muduo::Timestamp now(muduo::Timestamp::now());
         std::vector<Entry> expires = getExpired(now);
         std::vector<Entry>::iterator it = expires.begin();
         for (it; it != expires.end(); it++) {
@@ -153,7 +153,7 @@ namespace cai {
     bool insert(Timer *timer) {
         bool earlier = false;
         TimerList::iterator it = timers_.begin();
-        Timestamp when = timer->expiration();
+        muduo::Timestamp when = timer->expiration();
         if (it == timers_.end() || it->first > when){
             earlier = true;
         }

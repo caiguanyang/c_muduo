@@ -160,6 +160,30 @@ EventLoop.cc.s:
 	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/EventLoop.cc.s
 .PHONY : EventLoop.cc.s
 
+InetAddress.o: InetAddress.cc.o
+.PHONY : InetAddress.o
+
+# target to build an object file
+InetAddress.cc.o:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/InetAddress.cc.o
+.PHONY : InetAddress.cc.o
+
+InetAddress.i: InetAddress.cc.i
+.PHONY : InetAddress.i
+
+# target to preprocess a source file
+InetAddress.cc.i:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/InetAddress.cc.i
+.PHONY : InetAddress.cc.i
+
+InetAddress.s: InetAddress.cc.s
+.PHONY : InetAddress.s
+
+# target to generate assembly for a file
+InetAddress.cc.s:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/InetAddress.cc.s
+.PHONY : InetAddress.cc.s
+
 Poller.o: Poller.cc.o
 .PHONY : Poller.o
 
@@ -184,6 +208,54 @@ Poller.cc.s:
 	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/Poller.cc.s
 .PHONY : Poller.cc.s
 
+SocketsOps.o: SocketsOps.cc.o
+.PHONY : SocketsOps.o
+
+# target to build an object file
+SocketsOps.cc.o:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/SocketsOps.cc.o
+.PHONY : SocketsOps.cc.o
+
+SocketsOps.i: SocketsOps.cc.i
+.PHONY : SocketsOps.i
+
+# target to preprocess a source file
+SocketsOps.cc.i:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/SocketsOps.cc.i
+.PHONY : SocketsOps.cc.i
+
+SocketsOps.s: SocketsOps.cc.s
+.PHONY : SocketsOps.s
+
+# target to generate assembly for a file
+SocketsOps.cc.s:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/SocketsOps.cc.s
+.PHONY : SocketsOps.cc.s
+
+TimerQueue.o: TimerQueue.cc.o
+.PHONY : TimerQueue.o
+
+# target to build an object file
+TimerQueue.cc.o:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/TimerQueue.cc.o
+.PHONY : TimerQueue.cc.o
+
+TimerQueue.i: TimerQueue.cc.i
+.PHONY : TimerQueue.i
+
+# target to preprocess a source file
+TimerQueue.cc.i:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/TimerQueue.cc.i
+.PHONY : TimerQueue.cc.i
+
+TimerQueue.s: TimerQueue.cc.s
+.PHONY : TimerQueue.s
+
+# target to generate assembly for a file
+TimerQueue.cc.s:
+	cd /home/users/caiguanyang/learn/cai/c_muduo && $(MAKE) -f muduo/cainet/CMakeFiles/muduo_cainet.dir/build.make muduo/cainet/CMakeFiles/muduo_cainet.dir/TimerQueue.cc.s
+.PHONY : TimerQueue.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -199,9 +271,18 @@ help:
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... InetAddress.o"
+	@echo "... InetAddress.i"
+	@echo "... InetAddress.s"
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"
+	@echo "... SocketsOps.o"
+	@echo "... SocketsOps.i"
+	@echo "... SocketsOps.s"
+	@echo "... TimerQueue.o"
+	@echo "... TimerQueue.i"
+	@echo "... TimerQueue.s"
 .PHONY : help
 
 

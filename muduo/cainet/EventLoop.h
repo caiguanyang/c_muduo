@@ -18,9 +18,12 @@
 #ifndef  __EVENTLOOP_H_
 #define  __EVENTLOOP_H_
 #include "muduo/base/Mutex.h"
+#include "muduo/cainet/TimerId.h"
+#include "muduo/cainet/Callbacks.h"
 
 #include <boost/noncopyable.hpp>
 #include <boost/scoped_ptr.hpp>
+#include <boost/function.hpp>
 #include <bits/types.h>
 #include <vector>
 
@@ -61,11 +64,14 @@ private:
     // 添加回调函数到队列中
     void queueInLoop(const TFunctor &cb);
     void doPendingFunc();
+    // 处理dopendingFunctors 的唤醒
+    void handleEventFdRD();
+    void wakeup();
 
 private:
     // 标示是否在 loop 中
     bool looping_;
-    // 创建此示例的线程 ID
+    // 创建此实例的线程 ID
     const pid_t threadId_;
     bool quit_;
     TChannelList activeChannels_;
@@ -76,9 +82,11 @@ private:
     boost::scoped_ptr<TimerQueue> timerQueue_;
 
     // 待执行函数队列
-    bool callingPendingFunctor_;
+    bool callingPendingFunctors_;
     muduo::MutexLock mutex_;
-    std::vector<TFunctor> pendingFunctos_;
+    std::vector<TFunctor> pendingFunctors_;
+    int wakeupFd_;
+    boost::scoped_ptr<Channel> wakeupChannel_;
 };
 
 }

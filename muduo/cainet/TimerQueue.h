@@ -36,14 +36,14 @@ class TimerQueue : boost::noncopyable {
 public:
     TimerQueue(EventLoop *loop);
     ~TimerQueue();
-    TimerId addTimer(const TTimerCallback &cb, muduo::Timestamp, double interval);
+    TimerId addTimer(const TTimerCallback &cb, muduo::Timestamp when, double interval);
 
 private:
     void addTimerInLoop(Timer *timer);
     bool insert(Timer *timer);
     
 private:
-    typedef std::pair<Timestamp, Timer*> Entry;
+    typedef std::pair<muduo::Timestamp, Timer*> Entry;
     typedef std::set<Entry> TimerList;
     typedef std::pair<Timer*, int64_t> ActiveTimer;
     typedef std::set<ActiveTimer> ActiveTimerList;

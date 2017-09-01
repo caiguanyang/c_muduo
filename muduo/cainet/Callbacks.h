@@ -17,9 +17,11 @@
 #ifndef  __CALLBACKS_H_
 #define  __CALLBACKS_H_
 
+#include <boost/function.hpp>
+
 namespace cai {
     // timer相关的 callback
-    typedef boost::function<void ()> TTimerCallBack;
+    typedef boost::function<void ()> TTimerCallback;
 
 }
 
